@@ -17,7 +17,13 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 
-app.use(cors({ origin: CLIENT_ORIGIN, credentials: true }));
+
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN || "*", // allow your frontend or all
+  })
+);
+
 app.use(express.json());
 app.use(morgan('dev'));
 

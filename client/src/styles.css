@@ -1,0 +1,18 @@
+/* Minimal styles to make UI pleasant without Tailwind setup */
+:root{
+  --card-bg: #ffffff;
+  --muted: #64748b;
+  --accent: #f59e0b;
+}
+body { margin:0; color:#0f172a; }
+.header{ display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:rgba(255,255,255,0.9); border-bottom:1px solid rgba(15,23,42,0.06); position:sticky; top:0; z-index:100;}
+.container{ max-width:980px; margin:20px auto; padding:0 16px; }
+.card{ background:var(--card-bg); padding:16px; border-radius:12px; box-shadow: 0 6px 20px rgba(2,6,23,0.06); }
+.btn{ background:var(--accent); color:#fff; padding:10px 14px; border-radius:12px; border:none; cursor:pointer; font-weight:700; }
+.btn-ghost{ background:transparent; border:1px solid rgba(2,6,23,0.06); padding:8px 12px; border-radius:10px; cursor:pointer; }
+.nav-link{ margin-left:10px; color:var(--muted); text-decoration:none; font-weight:600;}
+.footer{ text-align:center; padding:12px 0; color:var(--muted); font-size:13px; margin-top:30px;}
+textarea{ width:100%; padding:10px; border-radius:10px; border:1px solid #e6e9ee; }
+.badge{ display:inline-block; padding:6px 10px; border-radius:999px; background:#f1f5f9; margin-right:6px; margin-bottom:6px; font-weight:600;}
+.quiz-correct{ background:#dcfce7; border:1px solid #86efac; }
+.quiz-wrong{ background:#fee2e2; border:1px solid #fca5a5; }

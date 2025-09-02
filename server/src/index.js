@@ -18,11 +18,24 @@ const PORT = process.env.PORT || 8080;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://sentiment-safari-1-23.onrender.com"
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "*", // allow your frontend or all
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
+
 
 app.use(express.json());
 app.use(morgan('dev'));
